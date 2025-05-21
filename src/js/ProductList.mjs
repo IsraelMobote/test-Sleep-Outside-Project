@@ -16,8 +16,8 @@ function productCardTemplate(product) {
 }
 
 export default class ProductList {
-    constructor(datasource, listElement) {
-        // this.category = category;
+    constructor(category, datasource, listElement) {
+        this.category = category;
         this.datasource = datasource;
         this.listElement = listElement;
     }

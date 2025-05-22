@@ -10,6 +10,7 @@ const cartContainer = document.querySelector(".cartItems");
 
 const product = new ProductDetails(productId, dataSource, cartContainer);
 product.init();
+product.renderCart();
 
 const clearCartButton = document.querySelector(".clearCart");
 clearCartButton.addEventListener("click", () => {

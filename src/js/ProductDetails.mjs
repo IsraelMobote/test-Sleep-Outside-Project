@@ -38,7 +38,14 @@ export default class ProductDetails {
         }
 
         setLocalStorage("so-cart", cartItems);
-        renderListWithTemplate(cartItemTemplate, this.cartContainer, cartItems);
+        this.renderCart();
+    }
+
+    renderCart() {
+        let cartItems = getLocalStorage("so-cart") || [];
+        if (cartItems.length > 0) {
+            renderListWithTemplate(cartItemTemplate, this.cartContainer, cartItems);
+        }
     }
 
     renderProductDetails() {

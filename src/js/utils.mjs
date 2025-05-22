@@ -21,3 +21,28 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  console.log(urlParams);
+  return urlParams.get(param);
+ 
+}
+
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+  const htmlStrings = list.map(templateFn);
+  if(clear=true) {
+    parentElement.innerHTML = '';
+  }
+  parentElement.insertAdjacentHTML('afterbegin', htmlStrings.join(''));
+}
+
+
+export function renderItemWithTemplate(templateFn, parentElement, item, position = "afterbegin", clear = false) {
+  const htmlStrings = templateFn(item);
+  if(clear=true) {
+    parentElement.innerHTML = '';
+  }
+  parentElement.insertAdjacentHTML('afterbegin', htmlStrings);
+}

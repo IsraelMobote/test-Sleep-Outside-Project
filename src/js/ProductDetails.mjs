@@ -11,6 +11,7 @@ export default class ProductDetails {
 
     async init() {
         this.product = await this.dataSource.findProductById(this.productId);
+        console.log(this.product);
         this.renderProductDetails();
 
         document.getElementById("addToCart").addEventListener('click', this.addProductToCart.bind(this));
@@ -52,7 +53,7 @@ export default class ProductDetails {
         const productDetailSection = document.querySelector('.product-detail');
         productDetailSection.children[0].textContent = this.product.Brand.Name;
         productDetailSection.children[1].textContent = this.product.NameWithoutBrand;
-        productDetailSection.children[2].src = this.product.Image;
+        productDetailSection.children[2].src = this.product.Images.PrimaryLarge;
         productDetailSection.children[2].alt = this.product.NameWithoutBrand;
         productDetailSection.children[3].textContent = `$${this.product.ListPrice}`;
         productDetailSection.children[4].textContent = this.product.Colors[0].ColorName;

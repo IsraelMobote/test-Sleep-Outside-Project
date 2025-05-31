@@ -278,6 +278,23 @@ button {
   color: white;
 }
 
+#product-categories {
+  display: flex;
+  width: 90%;
+  margin: 1rem auto;
+  justify-items: space-evenly;
+  background-color: rgb(228, 218, 175);
+ 
+  figure{
+    width: 100%;
+    text-align: center;
+
+    img{
+      width: 80px;
+    }
+  }
+}
+
 footer {
   font-size: var(--small-font);
   padding: 1em;

@@ -5,7 +5,7 @@ import { loadHeaderFooter } from "./utils.mjs";
 const productData = new ProductData("tents");
 
 const listElement = document.querySelector(".product-list");
-const list = new ProductList("tents", productData, listElement);
+const list = new ProductList("sleeping-bags", productData, listElement);
 
 list.init();
 loadHeaderFooter();

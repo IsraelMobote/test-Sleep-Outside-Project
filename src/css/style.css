@@ -284,12 +284,12 @@ button {
   margin: 1rem auto;
   justify-items: space-evenly;
   background-color: rgb(228, 218, 175);
- 
-  figure{
+
+  figure {
     width: 100%;
     text-align: center;
 
-    img{
+    img {
       width: 80px;
     }
   }

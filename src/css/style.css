@@ -272,14 +272,30 @@ button {
   font-size: 1.2rem;
   font-weight: 700;
   width: 200px;
- padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   margin-left: 100px;
   background-color: rgb(48, 48, 151);
   color: white;
+}
+
+#product-categories {
+  display: flex;
+  width: 90%;
+  margin: 1rem auto;
+  justify-items: space-evenly;
+  background-color: rgb(228, 218, 175);
+
+  figure {
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 80px;
+    }
+  }
 }
 
 footer {
   font-size: var(--small-font);
   padding: 1em;
 }
-

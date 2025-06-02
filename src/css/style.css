@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--font-base);
@@ -121,14 +125,54 @@ button {
   padding-top: 1em;
   position: relative;
   text-align: center;
+  animation: none;
+}
+
+.cart.animate {
+  animation: growandspin 3s 0.5s;
 }
 
 .cart svg {
   width: 25px;
 }
 
+@keyframes growandspin {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.4);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  60% {
+    transform: rotate(-60deg);
+  }
+
+  70% {
+    transform: rotate(60deg);
+  }
+
+  80% {
+    transform: rotate(-60deg);
+  }
+
+  90% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .cart:hover svg {
   fill: gray;
+  animation: growandspin 3s 0.5s;
 }
 
 /* End cart icon styles */

@@ -10,7 +10,7 @@ const productCategory = document.querySelector(".product-category");
 productCategory.textContent =
   category.charAt(0).toUpperCase() + category.slice(1);
 
-const productData = new ProductData(category);
+const productData = new ProductData();
 
 const listElement = document.querySelector(".product-list");
 const list = new ProductList(category, productData, listElement);

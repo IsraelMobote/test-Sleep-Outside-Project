@@ -8,7 +8,7 @@ const category = getParam("category");
 
 const productCategory = document.querySelector(".product-category");
 productCategory.textContent =
-    category.charAt(0).toUpperCase() + category.slice(1);
+  category.charAt(0).toUpperCase() + category.slice(1);
 
 const productData = new ProductData();
 

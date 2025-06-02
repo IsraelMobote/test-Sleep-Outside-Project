@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--font-base);
@@ -90,7 +94,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -121,8 +125,11 @@ button {
   padding-top: 1em;
   position: relative;
   text-align: center;
-  animation: growandspin 3s 0.5s;
+  animation: none;
+}
 
+.cart.animate {
+  animation: growandspin 3s 0.5s;
 }
 
 .cart svg {
@@ -166,7 +173,6 @@ button {
 .cart:hover svg {
   fill: gray;
   animation: growandspin 3s 0.5s;
-
 }
 
 /* End cart icon styles */

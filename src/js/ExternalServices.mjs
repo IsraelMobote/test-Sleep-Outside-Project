@@ -25,8 +25,6 @@ export async function checkoutData(payload) {
   const result = await fetch(`${baseURL}/checkout`, options);
   return result;
 }
-import CheckoutProcess from "./checkoutProcess.mjs";
-
 
 function convertToJson(res) {
   if (res.ok) {

@@ -94,7 +94,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -337,6 +337,33 @@ button {
       width: 80px;
     }
   }
+}
+
+form {
+  width: 50%;
+
+  fieldset {
+    border: 2px solid gray;
+    margin: 1rem 0;
+  }
+
+  legend {
+    font-size: 1.3rem;
+  }
+
+  label {
+    display: inline;
+    width: fit-content;
+    margin: 0.3rem 0;
+  }
+
+ 
+
+  fieldset.block > label {
+    display: block
+  }
+
+  ;
 }
 
 footer {

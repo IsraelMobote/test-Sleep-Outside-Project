@@ -1,3 +1,5 @@
+import CheckoutProcess from "./checkoutProcess.mjs";
+
 const baseURL = import.meta.env.VITE_SERVER_URL
 
 function convertToJson(res) {
@@ -9,7 +11,7 @@ function convertToJson(res) {
 }
 
 export default class ExternalServices {
- 
+
   async getData(category) {
     const response = await fetch(`${baseURL}products/search/${category}`);
     const data = await convertToJson(response);
@@ -20,4 +22,19 @@ export default class ExternalServices {
     const ExternalServices = await convertToJson(product);
     return ExternalServices.Result;
   }
+}
+
+export async function checkoutData(payload) {
+ 
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  }
+
+  const result = await fetch(`${baseURL}/checkout`, options);
+  return result;
 }

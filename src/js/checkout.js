@@ -1,4 +1,5 @@
 import CheckoutProcess from "./checkoutProcess.mjs";
+import { checkoutData } from "./ExternalServices.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
@@ -33,17 +34,10 @@ checkoutProcess.calculateITemSubTotal();
 
 const formElement = document.querySelector("#checkout");
 
-formElement.addEventListener('submit', (e) => {
+formElement.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const formData = new FormData(formElement);
-
-    let convertedJson = {};
-    formData.forEach(function (value, key) {
-        convertedJson[key] = value
-    });
-
-    console.log(convertedJson);
-
+    
+    checkoutProcess.checkout();
 }
 
 )

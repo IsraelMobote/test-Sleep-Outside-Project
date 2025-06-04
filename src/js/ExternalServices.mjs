@@ -11,28 +11,6 @@ function convertToJson(res) {
 }
 
 
-export async function checkoutData(payload) {
- 
-
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(payload)
-  }
-
-  const result = await fetch(`${baseURL}/checkout`, options);
-  return result;
-}
-
-function convertToJson(res) {
-  if (res.ok) {
-    return res.json();
-  } else {
-    throw new Error("Bad Response");
-  }
-}
 
 export default class ExternalServices {
 

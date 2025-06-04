@@ -5,7 +5,6 @@ const cartItems = getLocalStorage("so-cart");
 let total;
 const totalSpanElement = document.querySelector(".totalPrice");
 
-
 returnTotal();
 
 displayTotalPrice();
@@ -17,27 +16,23 @@ loadHeaderFooter();
 function updateCheckoutLink() {
   const checkoutLink = document.querySelector(".checkout");
   checkoutLink.href = `../checkout/?total=${total}`;
-
 }
 
 function renderCartContents() {
-  console.log(cartItems);
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
 
 async function displayTotalPrice() {
-
   total = await returnTotal();
 
   totalSpanElement.textContent = total;
   updateCheckoutLink();
-
 }
 
 function returnTotal() {
-  let total = 0;
-  cartItems.forEach(item => {
+  total = 0;
+  cartItems.forEach((item) => {
     const itemtotal = item.FinalPrice * getLocalStorage(item.Name);
     total += itemtotal;
   });

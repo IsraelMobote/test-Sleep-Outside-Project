@@ -94,7 +94,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -357,13 +357,9 @@ form {
     margin: 0.3rem 0;
   }
 
- 
-
   fieldset.block > label {
-    display: block
+    display: block;
   }
-
-  ;
 }
 
 footer {

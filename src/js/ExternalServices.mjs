@@ -10,19 +10,6 @@ function convertToJson(res) {
   }
 }
 
-export default class ExternalServices {
-
-  async getData(category) {
-    const response = await fetch(`${baseURL}products/search/${category}`);
-    const data = await convertToJson(response);
-    return data.Result;
-  }
-  async findProductById(id) {
-    const product = await fetch(`${baseURL}product/${id}`);
-    const ExternalServices = await convertToJson(product);
-    return ExternalServices.Result;
-  }
-}
 
 export async function checkoutData(payload) {
  
@@ -40,7 +27,6 @@ export async function checkoutData(payload) {
 }
 import CheckoutProcess from "./checkoutProcess.mjs";
 
-const baseURL = import.meta.env.VITE_SERVER_URL
 
 function convertToJson(res) {
   if (res.ok) {

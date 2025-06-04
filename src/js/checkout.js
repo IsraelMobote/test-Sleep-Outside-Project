@@ -8,19 +8,19 @@ const checkoutProcess = new CheckoutProcess("so-cart", ".order-summary");
 const formInputs = document.querySelectorAll('form input');
 
 formInputs[5].addEventListener("input", () => {
-    if(checkFormZipCodeIsFilled()) {
+    if (checkFormZipCodeIsFilled()) {
         checkoutProcess.init();
     }
 })
 
-let checkFormZipCodeIsFilled = function() {
+let checkFormZipCodeIsFilled = function () {
 
-       let formZipCodeFilled = false;
+    let formZipCodeFilled = false;
 
-        if (formInputs[5].validity.valid) {
+    if (formInputs[5].validity.valid) {
 
-            formZipCodeFilled = true;
-        }
+        formZipCodeFilled = true;
+    }
 
 
     return formZipCodeFilled;
@@ -29,3 +29,21 @@ let checkFormZipCodeIsFilled = function() {
 
 
 checkoutProcess.calculateITemSubTotal();
+
+
+const formElement = document.querySelector("#checkout");
+
+formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(formElement);
+
+    let convertedJson = {};
+    formData.forEach(function (value, key) {
+        convertedJson[key] = value
+    });
+
+    console.log(convertedJson);
+
+}
+
+)

@@ -2,6 +2,8 @@ import { getLocalStorage, getParam } from "./utils.mjs";
 
 const total = parseFloat(getParam("total")).toFixed(2);
 
+const itemList = getLocalStorage('so-cart');
+
 export default class CheckoutProcess {
 
     list = [];
@@ -17,25 +19,25 @@ export default class CheckoutProcess {
     init() {
         this.list = getLocalStorage(this.key);
         this.displayOrderTotals();
-      
+        //this.checkout();
+
     }
 
     calculateITemSubTotal() {
-          console.log(this.list.length);
+        console.log(this.list.length);
         const itemTotalElement = document.querySelector(`${this.outputSelector} .subtotal`);
         itemTotalElement.textContent = `$${total}`;
     }
 
     displayOrderTotals() {
-        
+
         this.tax = parseFloat((total * 0.06).toFixed(2));
         if (this.list.length > 1) {
-            console.log(5);
             this.shipping = 10 + (this.list.length - 1) * 2;
         }
         else if (this.list.length = 1) {
             this.shipping = 10;
-           
+
         }
         this.orderTotal = parseFloat(total) + parseFloat(this.tax) + parseFloat(this.shipping);
 
@@ -50,4 +52,18 @@ export default class CheckoutProcess {
 
     }
 
+
+    packageItems(items) {
+
+        const simpleItemList = itemList.map(function (item) {
+            return { "id": item.Id, "name": item.Name, "price": item.ListPrice, "quantity": getLocalStorage(item.Name) };
+
+        })
+        console.log(simpleItemList);
+        return simpleItemList;
+    }
+
+   
+    
 }
+

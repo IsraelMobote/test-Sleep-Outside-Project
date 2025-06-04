@@ -45,6 +45,7 @@ function cartItemTemplate(item) {
   <a href="#" class="cart-card__image">
     <img
       src="${item.Images.PrimaryMedium}"
+      src="${item.Images.PrimaryMedium}"
       alt="${item.Name}"
     />
   </a>
@@ -52,6 +53,7 @@ function cartItemTemplate(item) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
+  <p class="cart-card__quantity">${getLocalStorage(item.Name)}</p>
   <p class="cart-card__quantity">${getLocalStorage(item.Name)}</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;

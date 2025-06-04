@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+import CheckoutProcess from "./CheckoutProcess.mjs";
+=======
+import CheckoutProcess from "./checkoutProcess.mjs";
+>>>>>>> 361ac385a19333ec456632670a69b74a5030e942
+
+const baseURL = import.meta.env.VITE_SERVER_URL
+
+function convertToJson(res) {
+  if (res.ok) {
+    return res.json();
+  } else {
+    throw new Error("Bad Response");
+  }
+}
+
+export default class ExternalServices {
+
+  async getData(category) {
+    const response = await fetch(`${baseURL}products/search/${category}`);
+    const data = await convertToJson(response);
+    return data.Result;
+  }
+  async findProductById(id) {
+    const product = await fetch(`${baseURL}product/${id}`);
+    const ExternalServices = await convertToJson(product);
+    return ExternalServices.Result;
+  }
+}
+
+export async function checkoutData(payload) {
+ 
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  }
+
+  const result = await fetch(`${baseURL}/checkout`, options);
+  return result;
+}

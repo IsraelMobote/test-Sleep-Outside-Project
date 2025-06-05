@@ -75,7 +75,7 @@ export default class CheckoutProcess {
         return simpleItemList;
     }
 
-    async checkout(formElement) { 
+    async checkout(formElement) {
 
         let JsonObject = await formDataToJson(formElement);
         JsonObject.items = this.packageItems();
@@ -84,8 +84,14 @@ export default class CheckoutProcess {
         JsonObject.tax = this.tax;
         JsonObject.orderDate = await new Date().toISOString();
 
-        const result = await checkoutData(JsonObject);
-        console.log(result.json());
+        try {
+            const result = await checkoutData(JsonObject);
+            console.log(result);
+           // window.location.href = "./success.html";
+           // localStorage.clear();
+        } catch (error) {
+            console.log("Error!")
+        }
 
     }
 

@@ -31,5 +31,5 @@ const formElement = document.querySelector("#checkout");
 formElement.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  checkoutProcess.checkout();
+  checkoutProcess.checkout(formElement);
 });

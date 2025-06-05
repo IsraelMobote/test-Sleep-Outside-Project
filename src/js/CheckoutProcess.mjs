@@ -9,13 +9,11 @@ function formDataToJson(formElement) {
     const formData = new FormData(formElement);
 
     let convertedJson = {};
-
     formData.forEach(function (value, key) {
-        convertedJson[key] = value;
+        convertedJson[key] = value
     });
 
     return convertedJson;
-
 }
 
 export default class CheckoutProcess {
@@ -86,17 +84,8 @@ export default class CheckoutProcess {
         JsonObject.tax = this.tax;
         JsonObject.orderDate = await new Date().toISOString();
 
-        try {
-            const result = await checkoutData(JsonObject);
-            console.log(result);
-            window.location.href = "./success.html";
-            localStorage.clear()
-
-        }
-        catch (err) {
-            console.log(`Error! : ${err}`)
-        }
-
+        const result = await checkoutData(JsonObject);
+        console.log(result.json());
 
     }
 

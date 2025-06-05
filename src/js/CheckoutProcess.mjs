@@ -76,8 +76,7 @@ export default class CheckoutProcess {
     }
 
     async checkout(formElement) {
-        await this.displayOrderTotals();
-
+       
         let JsonObject = formDataToJson(formElement);
         JsonObject.items = this.packageItems();
         JsonObject.orderTotal = this.orderTotal;

@@ -6,7 +6,7 @@ function convertToJson(res) {
 
   res = res.json()
   if (res.ok) {
-    return res.json();
+    return res();
   } else {
     throw { name: 'servicesError', message: jsonResponse };
   }
@@ -39,5 +39,5 @@ export async function checkoutData(payload) {
   }
 
   const result = await fetch(`${baseURL}checkout/`, options);
-  return result;
+  return convertToJson(result);
 }

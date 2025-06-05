@@ -9,11 +9,16 @@ function formDataToJson(formElement) {
     const formData = new FormData(formElement);
 
     let convertedJson = {};
+     console.log(5);
+     console.log(formData);
     formData.forEach(function (value, key) {
-        convertedJson[key] = value
+        console.log(2);
+        convertedJson[key] = value;
     });
 
+    console.log(convertedJson);
     return convertedJson;
+
 }
 
 export default class CheckoutProcess {
@@ -76,9 +81,8 @@ export default class CheckoutProcess {
     }
 
     async checkout(formElement) {
-        await this.displayOrderTotals();
-
-        let JsonObject = formDataToJson(formElement);
+       
+        let JsonObject = await formDataToJson(formElement);
         JsonObject.items = this.packageItems();
         JsonObject.orderTotal = this.orderTotal;
         JsonObject.shipping = this.shipping;

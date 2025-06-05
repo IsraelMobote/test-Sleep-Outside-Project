@@ -1,4 +1,4 @@
-import CheckoutProcess from "./CheckoutProcess.mjs";
+import CheckoutProcess from "./checkoutProcess.mjs";
 
 const baseURL = import.meta.env.VITE_SERVER_URL
 
@@ -27,7 +27,7 @@ export default class ExternalServices {
 }
 
 export async function checkoutData(payload) {
- 
+
 
   const options = {
     method: 'POST',

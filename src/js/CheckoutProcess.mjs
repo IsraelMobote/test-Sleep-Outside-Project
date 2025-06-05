@@ -87,8 +87,8 @@ export default class CheckoutProcess {
         try {
             const result = await checkoutData(JsonObject);
             console.log(result);
-           // window.location.href = "./success.html";
-           // localStorage.clear();
+            window.location.href = "./success.html";
+            localStorage.clear();
         } catch (error) {
             console.log("Error!")
         }

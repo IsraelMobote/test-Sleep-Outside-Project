@@ -86,8 +86,14 @@ export default class CheckoutProcess {
         JsonObject.tax = this.tax;
         JsonObject.orderDate = await new Date().toISOString();
 
-        const result = await checkoutData(JsonObject);
-        console.log(result.json());
+        try {
+            const result = await checkoutData(JsonObject);
+            console.log(result.json());
+        }
+        catch (err) {
+            console.log(`Error! : ${err}`)
+        }
+
 
     }
 

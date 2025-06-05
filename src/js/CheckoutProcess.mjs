@@ -75,9 +75,9 @@ export default class CheckoutProcess {
         return simpleItemList;
     }
 
-    async checkout(formElement) {
-       
-        let JsonObject = formDataToJson(formElement);
+    async checkout(formElement) { 
+
+        let JsonObject = await formDataToJson(formElement);
         JsonObject.items = this.packageItems();
         JsonObject.orderTotal = this.orderTotal;
         JsonObject.shipping = this.shipping;

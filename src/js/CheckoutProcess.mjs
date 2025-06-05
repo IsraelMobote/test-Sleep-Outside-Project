@@ -92,7 +92,6 @@ export default class CheckoutProcess {
         } catch (error) {
             console.log("Error!")
         }
-
     }
 
 

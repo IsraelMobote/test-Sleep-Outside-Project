@@ -27,8 +27,6 @@ export default class ExternalServices {
 }
 
 export async function checkoutData(payload) {
-  console.log(payload);
- 
 
   const options = {
     method: 'POST',
@@ -38,6 +36,6 @@ export async function checkoutData(payload) {
     body: JSON.stringify(payload)
   }
 
-  const result = await fetch(`${baseURL}/checkout/`, options);
+  const result = await fetch(`${baseURL}checkout/`, options);
   return result;
 }

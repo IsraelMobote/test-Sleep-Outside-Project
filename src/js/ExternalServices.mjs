@@ -1,12 +1,13 @@
-import CheckoutProcess from "./CheckoutProcess.mjs";
+import CheckoutProcess from "./checkoutProcess.mjs";
 
 const baseURL = import.meta.env.VITE_SERVER_URL
 
-function convertToJson(res) {
+async function convertToJson(res) {
+  const data = await res.json();
   if (res.ok) {
-    return res.json();
+    return data;
   } else {
-    throw new Error("Bad Response");
+   throw { name: 'servicesError', message: data };
   }
 }
 
@@ -27,7 +28,7 @@ export default class ExternalServices {
 }
 
 export async function checkoutData(payload) {
- 
+console.log(payload);
 
   const options = {
     method: 'POST',
@@ -37,6 +38,6 @@ export async function checkoutData(payload) {
     body: JSON.stringify(payload)
   }
 
-  const result = await fetch(`${baseURL}/checkout`, options);
-  return result;
+  const result = await fetch(`${baseURL}checkout/`, options);
+  return convertToJson(result);
 }

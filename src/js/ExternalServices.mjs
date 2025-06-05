@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import CheckoutProcess from "./CheckoutProcess.mjs";
-=======
-import CheckoutProcess from "./checkoutProcess.mjs";
->>>>>>> 361ac385a19333ec456632670a69b74a5030e942
 
 const baseURL = import.meta.env.VITE_SERVER_URL
 
@@ -13,6 +9,8 @@ function convertToJson(res) {
     throw new Error("Bad Response");
   }
 }
+
+
 
 export default class ExternalServices {
 

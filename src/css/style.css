@@ -322,6 +322,10 @@ button {
   color: white;
 }
 
+.products > .total.hide {
+  display: none;
+}
+
 #product-categories {
   display: flex;
   width: 90%;

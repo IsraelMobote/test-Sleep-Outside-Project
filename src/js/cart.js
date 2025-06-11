@@ -3,13 +3,25 @@ import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 const cartItems = getLocalStorage("so-cart");
 
 let total;
+
+
+function checkIfCartIsEmpty(key) {
+  if (cartItems == null) {
+    const totalElement = document.querySelector(".total");
+    totalElement.classList.add('hide');
+    console.log(5)
+  }
+  else {
+    returnTotal();
+    renderCartContents();
+    displayTotalPrice();
+  }
+}
+
+checkIfCartIsEmpty();
+
 const totalSpanElement = document.querySelector(".totalPrice");
 
-returnTotal();
-
-displayTotalPrice();
-
-renderCartContents();
 
 loadHeaderFooter();
 

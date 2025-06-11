@@ -5,11 +5,10 @@ const cartItems = getLocalStorage("so-cart");
 let total;
 
 
-function checkIfCartIsEmpty(key) {
+function checkIfCartIsEmpty() {
   if (cartItems == null) {
     const totalElement = document.querySelector(".total");
-    totalElement.classList.add('hide');
-    console.log(5)
+    totalElement.classList.add("hide");
   }
   else {
     returnTotal();
